@@ -429,41 +429,57 @@ anime.timeline({loop: true})
      
      <h4>
        <span>&nbsp;</span>
-         <img src="https://avatars3.githubusercontent.com/u/22643762?s=400&v=4" height="42" width="42">  
+         <img src="https://avatars3.githubusercontent.com/u/22643762?s=400&v=4" height="40" width="40">  
         
-      <p class="ml11">&nbsp;MariaChGeo&nbsp;</p>
+      <p class="ml19">&nbsp;MariaChGeo&nbsp;</p>
   </div>  
-        <span class="ml3">&nbsp;MariaChGeo&nbsp;</span>
+        <span class="ml9">&nbsp;MariaChGeo&nbsp;</span>
       </h4>
   </div> 
-   <script>
-    $('.ml3').each(function(){
-    $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-    });
- 
-  </script>  
-    anime.timeline({loop: true})
-    .add({
-        targets: '.ml3 .letter',
-        opacity: [0,1],
-        easing: "easeInOutQuad",
-        duration: 2250,
-        delay: function(el, i) {
-          return 150 * (i+1)
-        }
-     }).add({
-        targets: '.ml3',
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 1000
-     });
-
+  <script>
+  // Wrap every letter in a span
+$('.ml9 .letters').each(function(){
+  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+});
+</script>
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml9 .letter',
+    scale: [0, 1],
+    duration: 1500,
+    elasticity: 600,
+    delay: function(el, i) {
+      return 45 * (i+1)
+    }
+  }).add({
+    targets: '.ml9',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
   </script>
   <style>
-     .ml3 {
-        font-weight: 900;
-     }
+    .ml9 {
+  position: relative;
+  font-weight: 200;
+  font-size: 4em;
+}
+
+.ml9 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml9 .letter {
+  transform-origin: 50% 100%;
+  display: inline-block;
+  line-height: 1em;
+}
   </style> 
 
   
@@ -511,10 +527,8 @@ anime.timeline({loop: true})
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>> Position #028 starting... >>>>>>>>>>>>>>>>>>>>>>> -->
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <div style="width: fit-content; float: left; margin: 10px 10px 10px 10px;">
-        <p>&nbsp;Position #028&nbsp;</p>
-        <p>&nbsp;Put your content!&nbsp;</p>
-  </div>
+ 
+
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<< ...Position #028 ending <<<<<<<<<<<<<<<<<<<<<<< -->
   <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
