@@ -359,7 +359,7 @@ function display(data) {
       };
 
 		
-      nodes.push(node);            /*i put a semicolon*/
+      nodes.push(node);            
 	});
 
 	console.log(nodes);
@@ -372,13 +372,16 @@ function display(data) {
 }
 
 
-function mouseover(d, i) {
-	//paradoteo 2 doesn't work yet
-	//var img = document.createElement("img");
-	//img.src = "photos/CWU.ico";
-	//document.body.appendChild(img);
-	
-	
+	//paradoteo 2
+	function mouseover(d, i) {
+	// tooltip popup
+	var mosie = d3.select(this);
+	var amount = mosie.attr("amount");
+	var donor = d.donor;
+	var party = d.partyLabel;
+	var entity = d.entityLabel;
+	var offset = $("svg").offset();
+		
 	// tooltip popup
 	var mosie = d3.select(this);
 	var amount = mosie.attr("amount");
