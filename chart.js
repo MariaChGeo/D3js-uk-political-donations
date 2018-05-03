@@ -372,7 +372,7 @@ function display(data) {
 }
 
 
-	//paradoteo 2
+	// paradoteo 2
 	function mouseover(d, i) {
 	// tooltip popup
 	var mosie = d3.select(this);
@@ -422,7 +422,7 @@ function display(data) {
 		.html(infoBox)
 			.style("display","block");
 		
-		//PARADOTEO 2
+		// PARADOTEO 2
 		var infoPic = document.createElement("img");
                      infoPic.setAttribute("src","http://www.bizreport.com/2011/02/03/android-logo-200x200.jpg");
                      infoPic.setAttribute("height","42");
